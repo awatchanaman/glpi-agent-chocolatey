@@ -23,6 +23,9 @@ if ($key.Count -eq 1) {
     }
 
     Uninstall-ChocolateyPackage @packageArgs
+    if  (Test-Path $Filename) {
+        Remove-Item -Force $Filename
+        }
   }
 } elseif ($key.Count -eq 0) {
   Write-Warning "$packageName has already been uninstalled by other means."
