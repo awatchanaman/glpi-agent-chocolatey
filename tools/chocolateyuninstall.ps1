@@ -23,6 +23,7 @@ if ($key.Count -eq 1) {
     }
 
     Uninstall-ChocolateyPackage @packageArgs
+    $Filename = "C:\Program Files\GLPI-Agent"
     if  (Test-Path $Filename) {
         Remove-Item -Force $Filename
         }
